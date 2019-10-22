@@ -1,0 +1,9 @@
+{% extends 'movies/base.html' %}
+{% block body %}
+<h1>영화 등록 페이지</h1>
+<form action="" method="POST">
+  {% csrf_token %}
+  {{ movie_form.as_p }}
+  <input type="submit" value="영화 등록하기">
+</form>
+{% endblock %}

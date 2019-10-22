@@ -1,0 +1,10 @@
+{% extends 'movies/base.html' %}
+{% load static %}
+{% block body %}
+<a href="{% url 'movies:create' %}">새 영화 등록</a>
+<br>
+<img src="{% static 'movies/movielist.jpg' %}"/>
+{% for movie in movies %}
+<h3><a href="{% url 'movies:detail' movie.pk %}"><b>{{ movie.title }}</b></a> {{ movie.score }}</h3>
+{% endfor %}
+{% endblock %}
